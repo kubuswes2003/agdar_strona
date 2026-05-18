@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGDAR — Przedsiębiorstwo Usług Transportowych</title>
+  <meta name="description" content="AGDAR — rodzinna firma transportowa z Kościana. Transport krajowy i międzynarodowy, materiały sypkie i standard. Od 1999 roku na polskich i europejskich drogach.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Główna nawigacja">
+    <div class="nav-inner">
+      <a href="#start" class="nav-logo" aria-label="AGDAR – przejdź do strony głównej">
+        <img src="img/agdar_małe_logo.png" alt="Logo AGDAR" class="logo-img">
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Otwórz menu nawigacyjne" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#start"    class="nav-link" data-section="start">start</a></li>
+        <li><a href="#o-nas"   class="nav-link" data-section="o-nas">o nas</a></li>
+        <li><a href="#oferta"  class="nav-link" data-section="oferta">oferta</a></li>
+        <li><a href="#historia" class="nav-link" data-section="historia">historia</a></li>
+        <li><a href="#kontakt" class="nav-link" data-section="kontakt">kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       TRUCK ANIMATION (fixed, bottom of viewport)
+  ═══════════════════════════════════════════ -->
+  <div class="truck-wrapper" id="truckWrapper" aria-hidden="true">
+    <svg class="truck-svg" xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 232 75" width="196" height="63">
+      <!-- Exhaust stacks -->
+      <rect x="157" y="1"  width="5" height="14" rx="2.5" fill="none" stroke="#0093d0" stroke-width="1.4"/>
+      <rect x="165" y="1"  width="5" height="14" rx="2.5" fill="none" stroke="#0093d0" stroke-width="1.4"/>
+      <!-- Exhaust smoke hint -->
+      <circle cx="159" cy="0" r="2" fill="none" stroke="#0093d0" stroke-width="0.8" opacity="0.4"/>
+      <circle cx="168" cy="0" r="2" fill="none" stroke="#0093d0" stroke-width="0.8" opacity="0.4"/>
+
+      <!-- Trailer body -->
+      <rect x="2" y="17" width="140" height="35" rx="3" fill="none" stroke="#0093d0" stroke-width="1.8"/>
+      <!-- Trailer rear door outline -->
+      <rect x="3" y="18" width="14" height="33" rx="2" fill="none" stroke="#0093d0" stroke-width="0.9" opacity="0.5"/>
+      <!-- Trailer undercarriage rail -->
+      <line x1="20" y1="52" x2="138" y2="52" stroke="#0093d0" stroke-width="0.8" opacity="0.45"/>
+
+      <!-- Fifth-wheel coupling -->
+      <rect x="136" y="41" width="16" height="8" rx="1.5" fill="none" stroke="#0093d0" stroke-width="1.4"/>
+
+      <!-- Cab body -->
+      <rect x="148" y="14" width="80" height="38" rx="6" fill="none" stroke="#0093d0" stroke-width="1.8"/>
+      <!-- Cab windshield -->
+      <rect x="157" y="21" width="55" height="22" rx="3" fill="none" stroke="#0093d0" stroke-width="1.3"/>
+      <!-- Door divider -->
+      <line x1="188" y1="21" x2="188" y2="52" stroke="#0093d0" stroke-width="0.8" opacity="0.6"/>
+      <!-- Front bumper -->
+      <rect x="224" y="36" width="5" height="13" rx="1" fill="none" stroke="#0093d0" stroke-width="1.3"/>
+      <!-- Headlight -->
+      <rect x="222" y="26" width="7" height="7" rx="1.5" fill="none" stroke="#0093d0" stroke-width="1.2"/>
+
+      <!-- AGDAR logotype on trailer -->
+      <text x="78" y="38"
+            text-anchor="middle"
+            font-family="DM Sans, sans-serif"
+            font-size="12"
+            font-weight="700"
+            letter-spacing="3.5"
+            fill="#0093d0">AGDAR</text>
+      <text x="78" y="47"
+            text-anchor="middle"
+            font-family="DM Sans, sans-serif"
+            font-size="6.2"
+            font-style="italic"
+            fill="#0093d0"
+            opacity="0.8"
+            letter-spacing="0.5">na czas do celu</text>
+
+      <!-- Trailer tandem rear axle wheels -->
+      <circle cx="32"  cy="63" r="10" fill="none" stroke="#0093d0" stroke-width="1.5"/>
+      <circle cx="32"  cy="63" r="4.5" fill="none" stroke="#0093d0" stroke-width="1"/>
+      <circle cx="50"  cy="63" r="10" fill="none" stroke="#0093d0" stroke-width="1.5"/>
+      <circle cx="50"  cy="63" r="4.5" fill="none" stroke="#0093d0" stroke-width="1"/>
+
+      <!-- Drive axle tandem wheels -->
+      <circle cx="96"  cy="63" r="10" fill="none" stroke="#0093d0" stroke-width="1.5"/>
+      <circle cx="96"  cy="63" r="4.5" fill="none" stroke="#0093d0" stroke-width="1"/>
+      <circle cx="114" cy="63" r="10" fill="none" stroke="#0093d0" stroke-width="1.5"/>
+      <circle cx="114" cy="63" r="4.5" fill="none" stroke="#0093d0" stroke-width="1"/>
+
+      <!-- Steer axle wheel -->
+      <circle cx="180" cy="63" r="10" fill="none" stroke="#0093d0" stroke-width="1.5"/>
+      <circle cx="180" cy="63" r="4.5" fill="none" stroke="#0093d0" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 1 — HERO
+  ═══════════════════════════════════════════ -->
+  <section id="start" class="hero-section">
+    <div class="hero-bg" role="img" aria-label="Panorama floty pojazdów AGDAR na parkingu"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Przedsiębiorstwo Usług Transportowych</p>
+      <h1 class="hero-title">AGDAR — na czas do&nbsp;celu</h1>
+      <p class="hero-subtitle">Firma rodzinna z Kościana, od 1999 roku na polskich i europejskich drogach.</p>
+      <a href="#kontakt" class="cta-button">skontaktuj się</a>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 2 — O NAS
+  ═══════════════════════════════════════════ -->
+  <section id="o-nas" class="content-section reveal-section">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="section-title">O <span class="accent">nas</span></h2>
+        <div class="title-rule"></div>
+      </header>
+
+      <div class="onas-grid">
+        <!-- Text column -->
+        <div class="onas-left">
+          <p class="section-text">
+            Firma AGDAR jest firmą rodzinną – międzypokoleniowym przekazem. Dzięki zdobytemu doświadczeniu jesteśmy w stanie sprostać największym wyzwaniom. Nasza siedziba znajduje się w Kościanie koło Poznania.
+          </p>
+          <p class="section-text">
+            Wykonujemy usługi transportowe na terenie całego kraju, Niemiec, krajów Benelux-u i Czech. Obsługujemy małe i duże firmy oraz klientów indywidualnych. Dysponujemy samochodami z naczepami wywrotkami oraz naczepami typu standard 13,60.
+          </p>
+          <p class="section-text">
+            Oferujemy kompleksową obsługę klienta w zakresie przewozu materiałów sypkich. Posiadając nowoczesny sprzęt oraz wysoko wykwalifikowaną kadrę pracowniczą, zapewniamy najwyższy poziom usług. Bardzo ważna dla nas jest ochrona środowiska, dlatego korzystamy z najnowszej floty.
+          </p>
+          <p class="section-motto">Nasze motto: <em>AGDAR — na czas do celu.</em></p>
+
+          <div class="feature-cards">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
+              <div class="feature-text">
+                <strong>Transport międzynarodowy</strong>
+                <span>Niemcy, Benelux, Czechy</span>
+              </div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div class="feature-text">
+                <strong>Certyfikat GMP+</strong>
+                <span>Bezpieczeństwo ładunków spożywczych</span>
+              </div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <div class="feature-text">
+                <strong>Nowoczesna flota</strong>
+                <span>Naczepy wywrotki i Standard 13,60</span>
+              </div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22" aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <div class="feature-text">
+                <strong>Firma rodzinna</strong>
+                <span>Od 1999 roku, dwa pokolenia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo column -->
+        <div class="onas-right">
+          <div class="main-photo-wrapper">
+            <img src="img/O_nas.JPG" alt="Dwa ciągniki Mercedes Actros floty AGDAR" class="main-photo" loading="lazy">
+          </div>
+          <div class="onas-thumbnails">
+            <img src="img/O_nas_salon_1.JPEG" alt="Salon Mercedes – nowe pojazdy AGDAR" class="thumb" loading="lazy">
+            <img src="img/O_nas_salon_2.JPG"  alt="Salon Mercedes – przekazanie kluczy AGDAR" class="thumb" loading="lazy">
+            <img src="img/O_nas_nowy_MAN.jpeg" alt="Nowy ciągnik MAN w barwach AGDAR" class="thumb" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 3 — OFERTA
+  ═══════════════════════════════════════════ -->
+  <section id="oferta" class="content-section reveal-section alt-bg">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="section-title">Nasza <span class="accent">oferta</span></h2>
+        <div class="title-rule"></div>
+      </header>
+
+      <div class="oferta-grid">
+        <!-- Text column -->
+        <div class="oferta-left">
+          <p class="section-text">
+            Nasz park to nowoczesne ciągniki z naczepami samowyładowczymi tylno-zsypowymi aluminiowymi o kubaturze od 40 do 50&nbsp;m³. Nasza flota przystosowana jest do transportu zboża i przetworów zbożowych, transportu ładunków drobnicowych oraz transportu ładunków masowych luzem.
+          </p>
+          <p class="section-text">
+            Posiadamy wymagane dokumenty do wykonywania transportu kabotażowego. Zawsze dbamy o czystość przestrzeni ładunkowych, co potwierdza certyfikat GMP+. Dodatkowo w 2022 roku nasz park został uzupełniony o nowoczesne ciągniki z naczepami typu Standard.
+          </p>
+
+          <div class="tags" role="list" aria-label="Typy ładunków i certyfikaty">
+            <span class="tag" role="listitem">zboże i przetwory zbożowe</span>
+            <span class="tag" role="listitem">ładunki drobnicowe</span>
+            <span class="tag" role="listitem">ładunki masowe luzem</span>
+            <span class="tag" role="listitem">kabotaż DE / UE</span>
+            <span class="tag tag-accent" role="listitem">certyfikat GMP+</span>
+          </div>
+
+          <div class="oferta-small-photos">
+            <img src="img/oferta2.jpg" alt="Flota ciągników MAN AGDAR w bazie w Kościanie" class="oferta-thumb" loading="lazy">
+            <img src="img/oferta3.JPG" alt="Rozładunek naczepy AGDAR – transport ładunków masowych" class="oferta-thumb" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Main photo -->
+        <div class="oferta-right">
+          <img src="img/oferta1.jpg" alt="Trzy nowoczesne ciągniki MAN floty AGDAR na trawie" class="oferta-main-photo" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 4 — HISTORIA
+  ═══════════════════════════════════════════ -->
+  <section id="historia" class="content-section reveal-section historia-section">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="section-title">25 lat <span class="accent">na drodze</span></h2>
+        <p class="section-lead">Od skromnych początków do nowoczesnej floty na europejskich trasach.</p>
+        <div class="title-rule"></div>
+      </header>
+
+      <div class="timeline" role="list">
+        <!-- 1999 — above -->
+        <div class="tl-item tl-above" role="listitem">
+          <div class="tl-content">
+            <figure class="tl-photo-wrap">
+              <img src="img/historia1.jpg" alt="Oryginalny ciągnik DAF w barwach biało-niebiesko-czerwonych – początki firmy AGDAR" class="tl-photo" loading="lazy">
+              <figcaption class="sr-only">Flota AGDAR w roku 1999</figcaption>
+            </figure>
+            <div class="tl-year">1999</div>
+            <p class="tl-text">Założenie firmy przez <strong>Zbigniewa Wesołowskiego</strong>. Początek rodzinnej tradycji transportowej w Kościanie, Wielkopolska.</p>
+          </div>
+          <div class="tl-connector">
+            <div class="tl-dot" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <!-- 2010 — below -->
+        <div class="tl-item tl-below" role="listitem">
+          <div class="tl-connector">
+            <div class="tl-dot" aria-hidden="true"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-year">2010</div>
+            <figure class="tl-photo-wrap">
+              <img src="img/historia_2.jpg" alt="Flota niebieskich ciągników DAF XF firmy AGDAR – era ekspansji" class="tl-photo" loading="lazy">
+              <figcaption class="sr-only">Flota AGDAR ok. 2010 roku</figcaption>
+            </figure>
+            <p class="tl-text">Wdrożenie certyfikatu <strong>GMP+</strong> — potwierdzenie najwyższych standardów bezpieczeństwa w transporcie artykułów spożywczych.</p>
+          </div>
+        </div>
+
+        <!-- 2013 — above -->
+        <div class="tl-item tl-above" role="listitem">
+          <div class="tl-content">
+            <div class="tl-year">2013</div>
+            <p class="tl-text">Ubezpieczenie OC przewoźnika w ruchu kabotażowym — otwarcie na rynki <strong>Niemiec i całej Unii Europejskiej</strong>. Nowe możliwości dla klientów zagranicznych.</p>
+          </div>
+          <div class="tl-connector">
+            <div class="tl-dot" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <!-- 2022 — below -->
+        <div class="tl-item tl-below" role="listitem">
+          <div class="tl-connector">
+            <div class="tl-dot" aria-hidden="true"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-year">2022</div>
+            <figure class="tl-photo-wrap">
+              <img src="img/historia3.jpg" alt="Nowy ciągnik MAN TGX – współczesna flota AGDAR" class="tl-photo" loading="lazy">
+              <figcaption class="sr-only">Nowy MAN TGX AGDAR, 2022</figcaption>
+            </figure>
+            <p class="tl-text">Rozszerzenie parku o nowoczesne ciągniki z <strong>naczepami typu Standard</strong> — kolejny krok w modernizacji floty i poszerzeniu zakresu usług.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 5 — KONTAKT
+  ═══════════════════════════════════════════ -->
+  <section id="kontakt" class="content-section reveal-section">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="section-title">Skontaktuj <span class="accent">się</span></h2>
+        <div class="title-rule"></div>
+      </header>
+
+      <div class="kontakt-grid">
+        <div class="kontakt-info">
+          <p class="company-name">Przedsiębiorstwo Usług Transportowych<br><strong>„AGDAR"</strong></p>
+
+          <ul class="kontakt-list" role="list">
+            <li class="kontakt-item">
+              <span class="kontakt-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              <address class="kontakt-detail">
+                ul. Pszenna 6a<br>64-000 Kościan, Polska
+              </address>
+            </li>
+
+            <li class="kontakt-item">
+              <span class="kontakt-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.4 2 2 0 0 1 3.62 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.78-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.27 16.14z"/>
+                </svg>
+              </span>
+              <div class="kontakt-detail">
+                <a href="tel:+48655124526">+48 65 512 45 26</a>
+                <span class="kontakt-sub">tel. / fax</span>
+              </div>
+            </li>
+
+            <li class="kontakt-item">
+              <span class="kontakt-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+                </svg>
+              </span>
+              <div class="kontakt-detail">
+                <a href="tel:+48600231655">+48 600 231 655</a>
+                <span class="kontakt-sub">tel. kom.</span>
+              </div>
+            </li>
+
+            <li class="kontakt-item">
+              <span class="kontakt-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </span>
+              <div class="kontakt-detail">
+                <a href="mailto:agdar.transport@gmail.com">agdar.transport@gmail.com</a>
+              </div>
+            </li>
+
+            <li class="kontakt-item">
+              <span class="kontakt-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                  <rect x="2" y="3" width="20" height="18" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="14" y2="13"/>
+                </svg>
+              </span>
+              <div class="kontakt-detail">
+                NIP: 698 166 39 20
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="kontakt-map">
+          <iframe
+            title="Mapa dojazdu do AGDAR w Kościanie"
+            src="https://www.google.com/maps?q=Pszenna+6a,+Ko%C5%9Bcian,+Polska&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="img/agdar_małe_logo.png" alt="Logo AGDAR" class="footer-logo" loading="lazy">
+      <p class="footer-copy">© 2026 AGDAR Przedsiębiorstwo Usług Transportowych. Wszelkie prawa zastrzeżone.</p>
+      <p class="footer-motto"><em>na czas do celu</em></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
