@@ -27,7 +27,7 @@ const translations = {
     card_fleet_title: 'Nowoczesna flota',
     card_fleet_desc_short: 'Naczepy wywrotki i Standard 13,60',
     card_family_title: 'Firma rodzinna',
-    card_family_desc: 'Od 1999 roku, dwa pokolenia',
+    card_family_desc: 'Od 1999 roku, trzy pokolenia',
 
     // Oferta
     offer_title: 'Nasza <span class="accent">oferta</span>',
@@ -90,7 +90,7 @@ const translations = {
     card_fleet_title: 'Modern fleet',
     card_fleet_desc_short: 'Tipper and standard 13.60 semi-trailers',
     card_family_title: 'Family business',
-    card_family_desc: 'Since 1999, two generations',
+    card_family_desc: 'Since 1999, three generations',
 
     // Oferta
     offer_title: 'Our <span class="accent">services</span>',
@@ -153,7 +153,7 @@ const translations = {
     card_fleet_title: 'Moderne Flotte',
     card_fleet_desc_short: 'Kipp- und Standardauflieger 13,60',
     card_family_title: 'Familienunternehmen',
-    card_family_desc: 'Seit 1999, zwei Generationen',
+    card_family_desc: 'Seit 1999, drei Generationen',
 
     // Oferta
     offer_title: 'Unsere <span class="accent">Leistungen</span>',
