@@ -143,4 +143,54 @@
     }
   });
 
+  /* ─── i18n: language switching ───────────────────────── */
+  const langSwitcher = document.getElementById('langSwitcher');
+  const langOptions  = langSwitcher.querySelectorAll('.lang-option');
+
+  const htmlContainingKeys = [
+    'about_title', 'about_motto', 'offer_title', 'history_title',
+    'contact_title', 'contact_company',
+    'history_1999', 'history_2010', 'history_2013', 'history_2022'
+  ];
+
+  function setLanguage(lang) {
+    const t = translations[lang];
+    if (!t) return;
+
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (!t[key]) return;
+      if (htmlContainingKeys.indexOf(key) !== -1) {
+        el.innerHTML = t[key];
+      } else {
+        el.textContent = t[key];
+      }
+    });
+
+    document.documentElement.lang = lang;
+    document.title = t.meta_title;
+    var metaDesc = document.getElementById('metaDescription');
+    if (metaDesc) metaDesc.setAttribute('content', t.meta_description);
+
+    langOptions.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+
+    localStorage.setItem('agdar-lang', lang);
+  }
+
+  langSwitcher.addEventListener('click', function (e) {
+    var btn = e.target.closest('.lang-option');
+    if (!btn) return;
+    setLanguage(btn.getAttribute('data-lang'));
+  });
+
+  // Auto-detect language on first visit
+  var savedLang = localStorage.getItem('agdar-lang');
+  var browserLang = navigator.language.slice(0, 2);
+  var initialLang = savedLang || (['de', 'en'].indexOf(browserLang) !== -1 ? browserLang : 'pl');
+  if (initialLang !== 'pl') {
+    setLanguage(initialLang);
+  }
+
 })();

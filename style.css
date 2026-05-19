@@ -160,6 +160,47 @@ address { font-style: normal; }
   font-weight: 600;
 }
 
+/* Language switcher */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.lang-option {
+  background: none;
+  border: none;
+  padding: 4px 6px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+  color: var(--gray-400);
+  cursor: pointer;
+  transition: color var(--transition);
+  line-height: 1;
+}
+
+.lang-option:hover {
+  color: var(--dark);
+}
+
+.lang-option.active {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.lang-separator {
+  color: var(--gray-400);
+  font-size: 0.75rem;
+  user-select: none;
+  line-height: 1;
+}
+
 /* Hamburger */
 .hamburger {
   display: none;
@@ -926,6 +967,11 @@ address { font-style: normal; }
 
   .navbar { padding: 10px 16px; }
   .nav-inner { padding: 8px 12px 8px 16px; }
+
+  /* Language switcher on mobile: before hamburger */
+  .lang-switcher {
+    margin-right: 4px;
+  }
 
   /* Show hamburger, hide link list by default */
   .hamburger { display: flex; }
