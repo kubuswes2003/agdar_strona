@@ -46,6 +46,7 @@ const translations = {
     history_2010: 'Wdrożenie certyfikatu <strong>GMP+</strong> — potwierdzenie najwyższych standardów bezpieczeństwa w transporcie artykułów spożywczych.',
     history_2013: 'Ubezpieczenie OC przewoźnika w ruchu kabotażowym — otwarcie na rynki <strong>Niemiec i całej Unii Europejskiej</strong>. Nowe możliwości dla klientów zagranicznych.',
     history_2022: 'Rozszerzenie parku o nowoczesne ciągniki z <strong>naczepami typu Standard</strong> — kolejny krok w modernizacji floty i poszerzeniu zakresu usług.',
+    history_2026: 'Wzmocnienie floty ciągnikami siodłowymi <strong>MAN TGX</strong> — nowe jednostki zapewniają jeszcze większą niezawodność i efektywność transportu.',
 
     // Kontakt
     contact_title: 'Skontaktuj <span class="accent">się</span>',
@@ -109,6 +110,7 @@ const translations = {
     history_2010: 'Implementation of the <strong>GMP+</strong> certificate — confirmation of the highest safety standards in food transport.',
     history_2013: 'Carrier liability insurance for cabotage — opening up to the markets of <strong>Germany and the entire European Union</strong>. New opportunities for international clients.',
     history_2022: 'Fleet expanded with modern trucks and <strong>standard semi-trailers</strong> — another step in fleet modernisation and service expansion.',
+    history_2026: 'Fleet reinforced with <strong>MAN TGX</strong> tractor units — new vehicles ensuring even greater reliability and transport efficiency.',
 
     // Kontakt
     contact_title: 'Get in <span class="accent">touch</span>',
@@ -172,6 +174,7 @@ const translations = {
     history_2010: 'Einführung des <strong>GMP+</strong>-Zertifikats — Bestätigung höchster Sicherheitsstandards im Lebensmitteltransport.',
     history_2013: 'Haftpflichtversicherung des Frachtführers im Kabotageverkehr — Öffnung für die Märkte <strong>Deutschlands und der gesamten Europäischen Union</strong>. Neue Möglichkeiten für internationale Kunden.',
     history_2022: 'Erweiterung des Fuhrparks um moderne Sattelzugmaschinen mit <strong>Standardaufliegern</strong> — ein weiterer Schritt in der Flottenmodernisierung und Erweiterung des Leistungsspektrums.',
+    history_2026: 'Verstärkung der Flotte durch <strong>MAN TGX</strong> Sattelzugmaschinen — neue Einheiten für noch mehr Zuverlässigkeit und Transporteffizienz.',
 
     // Kontakt
     contact_title: 'Nehmen Sie <span class="accent">Kontakt auf</span>',

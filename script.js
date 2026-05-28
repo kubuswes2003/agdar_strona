@@ -150,7 +150,7 @@
   const htmlContainingKeys = [
     'about_title', 'about_motto', 'offer_title', 'history_title',
     'contact_title', 'contact_company',
-    'history_1999', 'history_2010', 'history_2013', 'history_2022'
+    'history_1999', 'history_2010', 'history_2013', 'history_2022', 'history_2026'
   ];
 
   function setLanguage(lang) {
@@ -192,5 +192,29 @@
   if (initialLang !== 'pl') {
     setLanguage(initialLang);
   }
+
+  /* ─── Timeline photo gallery ─────────────────────────── */
+  document.querySelectorAll('[data-gallery]').forEach(function (gallery) {
+    var photos = gallery.querySelectorAll('.tl-photo');
+    var dots   = gallery.querySelectorAll('.tl-gallery-dot');
+    var idx    = 0;
+
+    function show(i) {
+      idx = (i + photos.length) % photos.length;
+      photos.forEach(function (p, j) { p.classList.toggle('active', j === idx); });
+      dots.forEach(function (d, j) { d.classList.toggle('active', j === idx); });
+    }
+
+    gallery.querySelector('.tl-gallery-nav.prev').addEventListener('click', function () { show(idx - 1); });
+    gallery.querySelector('.tl-gallery-nav.next').addEventListener('click', function () { show(idx + 1); });
+    dots.forEach(function (d, j) { d.addEventListener('click', function () { show(j); }); });
+
+    var startX = 0;
+    gallery.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+    gallery.addEventListener('touchend', function (e) {
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) show(diff > 0 ? idx + 1 : idx - 1);
+    });
+  });
 
 })();
